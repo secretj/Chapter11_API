@@ -1,14 +1,16 @@
 package date;
 
+import java.util.Calendar;
 
-
-public class Calendar {
+public class CalendarExample {
 	public static void main(String[] args) {
-		Calendar now = Calendar.getInstance();
+		Calendar now = Calendar.getInstance(); 
+		//getInstance()로 생성한 메모리주소는 모두 같다. 
+		//원래 객체를 생성할때 쓰던 방식은 주소가 모두 다르다. Calendar now = new Calendar();
 		
 		int year =now.get(Calendar.YEAR);
 		int month =now.get(Calendar.MONTH)+1;
-		int day = now.get(Calendar.DAY.OF.MONTH);
+		int day = now.get(Calendar.DAY_OF_MONTH);
 		
 		int week = now.get(Calendar.DAY_OF_WEEK);
 		String strWeek = null;
@@ -20,11 +22,7 @@ public class Calendar {
 		case Calendar.TUESDAY:
 		strWeek ="화";
 		break;
-		
-		case Calendar.WEDNSDAY:
-		strWeek ="수";
-		break;
-		
+
 		case Calendar.THURSDAY:
 		strWeek ="목";
 		break;
@@ -32,6 +30,7 @@ public class Calendar {
 		case Calendar.FRIDAY:
 		strWeek ="금";
 		break;
+		
 		case Calendar.SATURDAY:
 		strWeek ="토";
 		break;
@@ -41,7 +40,7 @@ public class Calendar {
 		}
 		
 		
-		int amPm = now.get(Calendar.AM.PM);
+		int amPm = now.get(Calendar.AM_PM);
 		String strAmPm =null;
 		if(amPm == Calendar.AM) {
 			strAmPm ="오전";
@@ -54,12 +53,12 @@ public class Calendar {
 		int second = now.get(Calendar.SECOND);
 		
 		System.out.print(year+"년");
-		System.out.println(month+"월");
+		System.out.print(month+"월");
 		System.out.print(day+"일");
 		System.out.println(strWeek+"요일");
 		System.out.print(strAmPm+" ");
-		System.out.println(hour+ "시");
-		System.out.println(minute +"분");
+		System.out.print(hour+ "시");
+		System.out.print(minute +"분");
 		System.out.print(second +"초");
 	}
 
